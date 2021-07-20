@@ -9,4 +9,4 @@ read -s -p "Enter password : " password
 # Create the folder
 mkdir -p "$foldername"
 
-echo $password > $foldername/secret.txt
+echo $password | sha256sum > $foldername/secret.txt
