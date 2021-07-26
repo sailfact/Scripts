@@ -3,8 +3,9 @@
 # check password
 ./passwordCheck.sh
 
+# retreive exit code of passwordCheck.sh
 case $? in
-
+    # sucess
     0 )
         echo "1.Create a folder"
         echo "2.Copy a folder"
@@ -14,23 +15,28 @@ case $? in
 
         case $option in
 
-            1)
+            1) 
+                # create folder
                 ./folderMaker.sh
             ;;
             2)
+                # copy folder
                 ./folderCopier.sh
             ;;
             3)
+                # set passwrod
                 ./setPassword.sh
             ;;
-            *)
+            *)  
+                # default
                 echo "Invalid Option"
             ;;
         
         esac
-        ;;
+    ;;
+    # fail
     1 )
         echo "Incorrect Password"
-        ;;
+    ;;
 
 esac
