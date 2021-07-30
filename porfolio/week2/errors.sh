@@ -1,24 +1,21 @@
 #!/bin/bash 
       
 secret='shhh' #Don't tell anyone! 
-      
-#if the user types in the correct secret, tell them they got it right! 
-      
-if [ "$secret" = $REPLY ]; then 
-      
-    echo "You got it right!" 
-      
-    correct=true 
-      
-else     echo "You got it wrong :(" 
-      
-    correct=false 
-      
-fi 
-      
 read -s -p "what's the secret code?" 
       
-echo 
+echo       
+#if the user types in the correct secret, tell them they got it right! 
+      
+if [ "$secret" = "$REPLY" ]; then 
+    echo "You got it right!" 
+      
+    correct=true  
+else      
+    echo "You got it wrong :(" 
+      
+    correct=false  
+fi 
+      
       
 case $correct in 
       
@@ -37,4 +34,5 @@ true)
     ;; 
       
 esac 
+     
      
