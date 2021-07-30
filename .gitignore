@@ -1,3 +1,4 @@
 *.txt
 /test
 /test2
+.vscode
