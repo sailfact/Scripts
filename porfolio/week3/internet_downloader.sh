@@ -5,7 +5,7 @@
 while [ "$prompt" != "exit" ]; do
     echo "type 'exit' to quit"
     read -p "enter URL for download > " prompt
-    if [ "$promt" != "exit" ]; then 
+    if [ "$prompt" != "exit" ]; then 
         url=$prompt
         read -p "enter download location > " dl_location
         wget $url -P $dl_location --quiet
