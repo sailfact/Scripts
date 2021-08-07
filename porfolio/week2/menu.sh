@@ -1,7 +1,7 @@
 #!/bin/bash
 
 # check password
-./passwordCheck.sh
+./PasswordCheck.sh
 
 # retreive exit code of passwordCheck.sh
 case $? in
@@ -17,7 +17,7 @@ case $? in
 
             1) 
                 # create folder
-                ./folderMaker.sh
+                ./foldermaker.sh
             ;;
             2)
                 # copy folder

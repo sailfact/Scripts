@@ -1,0 +1,95 @@
+{	
+	"add a shebang": 
+	{ 
+        "prefix": "shebang", 
+		
+        "body": 
+		[ 
+		
+        	"#!/bin/bash" 
+		
+        ], 
+		
+        "description": "Add shebang to script"
+			  
+	},
+	"Add case statement" :{
+
+		"prefix": "casestat",
+		
+		"description": "Adds case statement",
+		
+		"body": [
+		
+		"case $var in",
+		
+		
+		"case1 )",
+		
+		"#Code if matches",
+		
+		";;",
+		
+		"case2 )",
+		
+		"#Code if matches",
+		
+		";;",
+		"*)",
+		
+		"# Default",
+		
+		";;",
+		
+		"esac"]
+	},
+	"addcolour":{
+		"prefix": "colourvar",
+		
+		"description": "Adds colour variables",
+		
+		"body":[
+			"BLACK=\\003[30m",
+			"RED=\\003[31m",
+			"GREEN=\\003[32m",
+			"BROWN=\\003[33m",
+			"BLUE=\\003[34m",
+			"PURPLE=\\003[35m",
+			"CYAN=\\003[36m",
+			"GREY=\\003[37m",
+			"NC=\\003[0m"
+		]
+
+	},
+	"if":{
+		"prefix": "if",
+		"description": "Add if statement",
+		"body": [
+			"if [  ]; then",
+			"",
+			"fi"
+		]
+	},
+	"if..else":{
+		"prefix": "ifelse",
+		"description": "Add if..else statement",
+		"body": [
+			"if [  ]; then",
+			"",
+			"else",
+			"",
+			"fi"
+		]
+	},
+	"if..elif":{
+		"prefix": "if..elif",
+		"description": "Add if..elifstatement",
+		"body": [
+			"if [  ]; then",
+			"",
+			"elif [  ]; then",
+			"",
+			"fi"
+		]
+	}
+}

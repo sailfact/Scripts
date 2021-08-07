@@ -1,4 +1,4 @@
 #!/bin/bash
 
-echo $(./ip_info.sh | sed -n '/IP Address: / p')
+echo $(./IpInfo.sh | sed -n '/IP Address: / p')
 
