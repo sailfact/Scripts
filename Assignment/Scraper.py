@@ -15,6 +15,12 @@ client.close() # close connection
 soup = BeautifulSoup(html, "html.parser")
 containers = soup.findAll("div", {"class":"views-row"})
 
+# Open csv file
+filename = "alerts.csv"
+f = open(filename, "w")
+headers = "Alert Status, Date, Title, Summary"
+f.write(headers)
+
 for container in containers[1:]:
     # skip first row as its blank
     date_container = container.findAll("p",{"class":"acsc-date"})
@@ -22,7 +28,10 @@ for container in containers[1:]:
     summary_container = container.findAll("p",{"class":"acsc-summary"})
 
     date, alert = date_container[0].text.split(" - ") # get date and alert
+    alert = alert.split(": ")[1]
     title = title_container[0].text
     summary = summary_container[0].text
 
     print("{0}, {1}, {2}, {3}".format(alert, date, title, summary))
+
+    f.write("{0}, {1}, {2}, {3}".format(alert, date, title, summary))
