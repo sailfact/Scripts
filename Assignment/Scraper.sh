@@ -9,13 +9,17 @@ printError ()
 # SCRIPT
 
 if [ $# -eq 0 ]; then
-    printError "No inputs supplied"
-    exit 0
+    # Scrape www.cyber.gov.au/acsc/view-all-content/alerts
+    python Scraper.py
+else
+    # Scrape www.cyber.gov.au/acsc/view-all-content/alerts
+    # with search params supplied from csv file
+    file=$1
+
+    # test get csv search terms
+    while IFS=, read p; do
+        echo "$p"
+    done < <(grep "" $1)
 fi
 
-file=$1
-
-# test get csv search terms
-while IFS=, read p; do
-    echo "$p"
-done < <(grep "" $1)
+exit 0
