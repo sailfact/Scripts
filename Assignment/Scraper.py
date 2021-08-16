@@ -53,31 +53,65 @@ if __name__ == "__main__":
 
         f.write("{0}, {1}, {2}, {3}".format(alert, date, title, summary))
 
+"""
+Determines url string from given inputs
+Scope
+Title Option
+Title Search
+Content Options
+Content Search
+Sort By
+Sort Order
+Per Line Format
+[G|I|S|L],[EQUAL|WORD|ALL],['title'],[WORD|ALL],['body'],[DATE|TITLE],[ASC|DESC]
+"""
 def get_scope(scope):
-    if scope == "g":
+    if scope == "G":
         ret = "/government"
-    elif scope == "i":
+    elif scope == "I":
         ret = "/individuals-and-families"
-    elif scope == "s":
+    elif scope == "S":
         ret = "/small-and-medium-businesses"
-    elif scope == "l":
+    elif scope == "L":
         ret = "/large-organisations-and-infrastructure"
     else: 
         ret = ""
 
     return ret 
     
-def get_title_op(line):
-    return 
-def get_title(line):
-    return 
-def get_body_op(line):
-    return 
-def get_body(line):
-    return
-def get_sort(line):
-    """field_date_user_updated_value"""
-    """title"""
-    return
-def get_order(line):
-    return
+def get_title_op(op):
+    if op == "EQUAL":
+        ret = "%3D"
+    elif op == "ALL":
+        ret = "allwords"
+    else:
+        # Default to word
+        ret = "word"
+
+    return ret 
+
+def get_title(title):
+    return str(title)
+
+def get_body_op(op):
+    if op == "ALL":
+        ret = "allwords"
+    else:
+        # Default to word
+        ret = "word"
+    return ret
+
+def get_body(body):
+    return str(body)
+    
+def get_sort(sort):
+    if sort == "DATE" or sort == "TITLE":
+        return sort 
+    else:
+        return "field_date_user_updated_value"
+
+def get_order(order):
+    if order == "ASC" or order == "DESC":
+        return order
+    else:
+        return "DESC" 
