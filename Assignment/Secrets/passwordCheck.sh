@@ -4,7 +4,7 @@
 read -sp "enter secret password :" password
 
 # check password against hash
-echo $password | sha256sum -c --quiet --status "secret.txt"
+echo $password | sha256sum -c --quiet --status "Secrets/secret.txt"
 
 if [ $? -eq 0 ]; then
     # set exit code

@@ -8,51 +8,38 @@ case $? in
     0 )
         option=0
         while [ $option -ne 8 ]; do
-            echo "1. Create a folder"
-            echo "2. Copy a folder"
-            echo "3. Set a password"
-            echo "8. Exit"
+            echo "1. Run Default Scraper"
+            echo "2. Run Custom Scraper"
+            echo "3. Edit Custom Scrape"
+            echo "4. Set a password"
+            echo "5. Exit"
 
             read -p "option > " option
 
             case $option in
 
                 1) 
-                    # create folder
-                    ./folderMaker.sh
+                    # Run Regular Scraper
+                    ./Scraper.sh
                 ;;
                 2)
-                    # copy folder
-                    ./folderCopier.sh
+                    # Run Custom Scraper
+                    ./Scraper.sh threats.csv
                 ;;
                 3)
-                    # set passwrod
-                    ./setPassword.sh
+                    nano threats.csv
                 ;;
-                4)  
-                    # calculator
-                    ./simplecalc.sh
+                4)
+                    # set passwrod
+                    ./Secrets/setPassword.sh
                 ;;
                 5)
-                    # create week folders
-                    ./megafoldermaker
-                ;;
-                6)
-                    #check files
-                    ./filenames.sh filenames.txt
-                ;;
-                7)
-                    #Download file
-                    ./internet_downloader.sh
-                ;;
-                8)
                     echo "Exiting"
                 ;;
                 *)  
                     # default
                     echo "Invalid Option"
                 ;;
-            
             esac
         done
         exit 0

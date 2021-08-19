@@ -1,6 +1,12 @@
 # Web Scraper
 > Author: Ross Curley\
 > Year: 2021
+## Set-Up:
+    chmod +x /Secrets/passwordCheck.sh
+    chmod +x /Secrets/setPassword.sh
+    chmod +x Scraper.sh
+    chmod +x ScraperMenu.sh
+
 ## Custom Search Format
 ### Scope:
     Government = G
