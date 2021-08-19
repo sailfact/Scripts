@@ -77,7 +77,7 @@ if __name__ == "__main__":
         #     print(arg)
         #  Test
         line = sys.argv[1].split(',')
-        filename = "alerts{0}.csv".format(sys.argv[2])
+        filename = "Alerts/alerts{0}.csv".format(sys.argv[2])
         url = "https://www.cyber.gov.au/acsc/view-all-content/alerts{0}?title_op={1}&title={2}&body_value_op={3}&body_value={4}&sort_by={5}&sort_order={6}".format(
             get_scope(line[0]),
             get_title_op(line[1]),
@@ -89,7 +89,7 @@ if __name__ == "__main__":
         )
     else:
         url = 'https://www.cyber.gov.au/acsc/view-all-content/alerts'
-        filename = "alerts.csv"
+        filename = "Alerts/alerts.csv"
     
     try:
         # Opening connection to website reading html into variable
@@ -120,7 +120,7 @@ if __name__ == "__main__":
             title = title_container[0].text
             summary = summary_container[0].text
 
-            f.write("{0}, {1}, {2}, {3}".format(alert, date, title, summary))
+            f.write("{0}, {1}, {2}, {3}\n".format(alert, date, title, summary))
         f.close()
     except IOError as e:
         # Handle any IO errors that may occur
