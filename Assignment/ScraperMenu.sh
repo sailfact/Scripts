@@ -7,7 +7,7 @@ case $? in
     # success
     0 )
         option=0
-        while [ $option -ne 8 ]; do
+        while [[ $option -ne 5 ]]; do
             echo "1. Run Default Scraper"
             echo "2. Run Custom Scraper"
             echo "3. Edit Custom Scrape"
@@ -20,11 +20,11 @@ case $? in
 
                 1) 
                     # Run Regular Scraper
-                    ./Scraper.sh
+                    ./Scraper.sh &
                 ;;
                 2)
                     # Run Custom Scraper
-                    ./Scraper.sh threats.csv
+                    ./Scraper.sh threats.csv &
                 ;;
                 3)
                     nano threats.csv
