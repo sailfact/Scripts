@@ -2,11 +2,11 @@
 
 findPhrase()
 {
-    echo "Results for {$1}"
+    echo "Results for $1"
     echo
     echo
     # Find all lines with the searched word
-    grep -r --color "$1" Alerts/
+    grep -r --color "$1" alerts.csv
     echo 
     echo
 }
@@ -14,13 +14,13 @@ findPhrase()
 alertCount()
 {
     echo "LOW : "
-    grep -r -c "LOW" Alerts/
+    grep -c "LOW" alerts.csv
     echo "MEDIUM : "
-    grep -r -c "MEDIUM" Alerts/
+    grep -c "MEDIUM" alerts.csv
     echo "HIGH : "
-    grep -r -c "HIGH" Alerts/
+    grep -c "HIGH" alerts.csv
     echo "CRITICAL : "
-    grep -r -c "CRITICAL" Alerts/
+    grep -c "CRITICAL" alerts.csv
 }
 
 option=0

@@ -21,13 +21,11 @@ else
     file=$1
     i=0
     # test get csv search terms
-    while IFS=, read p; do
-        python Scraper.py $p $i
-        if [ $? -ne 0 ]; then
-            printError "Scraper failed on line : {$p}"
-        fi
-        i=$(expr $i + 1)
-    done < <(grep "" $1)
+    read -r line<$file
+    python Scraper.py $line 
+    if [ $? -ne 0 ]; then
+        printError "Scraper failed on line : {$line}"
+    fi
 fi
 
 exit 0

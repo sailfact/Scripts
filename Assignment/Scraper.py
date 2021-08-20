@@ -16,7 +16,7 @@ Content Options
 Content Search
 Sort By
 Sort Order
-Per Line Format
+
 [G|I|S|L],[EQUAL|WORD|ALL],['title'],[WORD|ALL],['body'],[DATE|TITLE],[ASC|DESC]
 """
 def get_scope(scope):
@@ -71,13 +71,13 @@ def get_order(order):
         return "DESC" 
 
 if __name__ == "__main__":
-    if len(sys.argv) == 3:
+    filename = "alerts.csv"
+    if len(sys.argv) == 2:
         # Test print args
         # for arg in enumerate(sys.argv):
         #     print(arg)
         #  Test
         line = sys.argv[1].split(',')
-        filename = "Alerts/alerts{0}.csv".format(sys.argv[2])
         url = "https://www.cyber.gov.au/acsc/view-all-content/alerts{0}?title_op={1}&title={2}&body_value_op={3}&body_value={4}&sort_by={5}&sort_order={6}".format(
             get_scope(line[0]),
             get_title_op(line[1]),
@@ -89,7 +89,6 @@ if __name__ == "__main__":
         )
     else:
         url = 'https://www.cyber.gov.au/acsc/view-all-content/alerts'
-        filename = "Alerts/alerts.csv"
     
     try:
         # Opening connection to website reading html into variable

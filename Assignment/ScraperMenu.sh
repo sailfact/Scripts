@@ -33,7 +33,7 @@ case $? in
                 ;;
                 4)
                     # View Alerts
-                    ./ViewAlerts.sh
+                    cat alerts.csv
                 ;;
                 5)
                     # Search through alerts
