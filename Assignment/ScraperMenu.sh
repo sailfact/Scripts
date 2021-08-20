@@ -7,12 +7,14 @@ case $? in
     # success
     0 )
         option=0
-        while [[ $option -ne 5 ]]; do
+        while [[ $option -ne 7 ]]; do
             echo "1. Run Default Scraper"
             echo "2. Run Custom Scraper"
             echo "3. Edit Custom Scrape"
-            echo "4. Set a password"
-            echo "5. Exit"
+            echo "4. View Alerts"
+            echo "5. Search"
+            echo "6. Set a password"
+            echo "7. Exit"
 
             read -p "option > " option
 
@@ -30,10 +32,18 @@ case $? in
                     nano threats.csv
                 ;;
                 4)
+                    # View Alerts
+                    ./ViewAlerts.sh
+                ;;
+                5)
+                    # Search through alerts
+                    ./Search.sh
+                ;;
+                6)
                     # set passwrod
                     ./Secrets/setPassword.sh
                 ;;
-                5)
+                7)
                     echo "Exiting"
                 ;;
                 *)  

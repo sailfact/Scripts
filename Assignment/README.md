@@ -6,6 +6,8 @@
     chmod +x /Secrets/setPassword.sh
     chmod +x Scraper.sh
     chmod +x ScraperMenu.sh
+    chmod +x ViewAlerts.sh
+    chmod +x Search.sh
 
 ## Custom Search Format
 ### Scope:
