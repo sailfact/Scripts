@@ -32,7 +32,7 @@
 ### Sort order:
     ASC
     DESC
-### Per line format:
+### Line format:
     [G|I|S|L],[EQUAL|WORD|ALL],['title'],[WORD|ALL],['body'],[DATE|TITLE],[ASC|DESC]
 
 ### Any of these options can also be left blank
