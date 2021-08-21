@@ -62,23 +62,18 @@ def get_sort(sort):
     if sort == "DATE" or sort == "TITLE":
         return sort 
     else:
+        # Default to DATE
         return "field_date_user_updated_value"
 
 def get_order(order):
     if order == "ASC" or order == "DESC":
         return order
     else:
+        # Default to DESC
         return "DESC" 
 
-if __name__ == "__main__":
-    filename = "alerts.csv"
-    page = 0
-    if len(sys.argv) == 2:
-        # Test print args
-        # for arg in enumerate(sys.argv):
-        #     print(arg)
-        #  Test
-        line = sys.argv[1].split(',')
+def get_url(line):
+    try:
         url = "https://www.cyber.gov.au/acsc/view-all-content/alerts{0}?title_op={1}&title={2}&body_value_op={3}&body_value={4}&sort_by={5}&sort_order={6}".format(
             get_scope(line[0]),
             get_title_op(line[1]),
@@ -88,6 +83,16 @@ if __name__ == "__main__":
             get_sort(line[5]),
             get_order(line[6])
         )
+    except IndexError as e:
+        # Handle any Index related errors
+        print(e)
+        exit(1)
+
+if __name__ == "__main__":
+    filename = "alerts.csv"
+    page = 0
+    if len(sys.argv) == 2:
+        url = get_url(sys.argv[1].split(','))
     else:
         url = 'https://www.cyber.gov.au/acsc/view-all-content/alerts?title_op=word&title=&body_value_op=word&body_value=&sort_by=field_date_user_updated_value&sort_order=DESC'
     
