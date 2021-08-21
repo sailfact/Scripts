@@ -1,5 +1,9 @@
 #!/bin/bash
 
+# Scraper.sh
+# Author: Ross Curley
+# Runs the scraper 
+
 # FUNCTIONS
 printError ()
 {
@@ -24,7 +28,7 @@ else
     read -r line<$file
     python Scraper.py $line 
     if [ $? -ne 0 ]; then
-        printError "Scraper failed on line : {$line}"
+        printError "Scraper failed for line : {$line}"
     fi
 fi
 

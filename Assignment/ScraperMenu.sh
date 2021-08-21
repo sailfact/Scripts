@@ -1,4 +1,9 @@
 #!/bin/bash
+
+# SearchMenu.sh
+# Author: Ross Curley
+# Displays CLI menu to the user
+
 # check password
 ./Secrets/passwordCheck.sh
 
@@ -29,6 +34,7 @@ case $? in
                     ./Scraper.sh threats.csv &
                 ;;
                 3)
+                    # Edit threats.csv
                     nano threats.csv
                 ;;
                 4)
