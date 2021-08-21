@@ -5,6 +5,10 @@
 # Script runs search and analysis options for the user
 
 # Functions
+printError ()
+{
+    echo -e "\033[31mError:\033[0m $1"
+}
 
 findPhrase()
 {
@@ -79,7 +83,7 @@ filterStatus()
                 echo "Exiting"
             ;;
             *)
-                echo "Invalid Option"
+                printError "Invalid Option"
             ;;
         esac
     done
@@ -128,7 +132,7 @@ while [[ $option -ne 6 ]]; do
         ;;
         *)  
             # default
-            echo "Invalid Option"
+            printError "Invalid Option"
         ;;
     esac
 done

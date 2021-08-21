@@ -4,6 +4,14 @@
 # Author: Ross Curley
 # Displays CLI menu to the user
 
+# FUNCTIONS
+printError ()
+{
+    echo -e "\033[31mError:\033[0m $1"
+}
+
+# SCRIPT
+
 # check password
 ./Secrets/passwordCheck.sh
 
@@ -54,7 +62,7 @@ case $? in
                 ;;
                 *)  
                     # default
-                    echo "Invalid Option"
+                    printError"Invalid Option"
                 ;;
             esac
         done
@@ -62,7 +70,7 @@ case $? in
     ;;
     # fail
     1 )
-        echo "Incorrect Password"
+        printError "Incorrect Password"
         exit 1
     ;;
 esac
