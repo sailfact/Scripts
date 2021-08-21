@@ -72,6 +72,7 @@ def get_order(order):
 
 if __name__ == "__main__":
     filename = "alerts.csv"
+    page = 0
     if len(sys.argv) == 2:
         # Test print args
         # for arg in enumerate(sys.argv):
@@ -88,7 +89,7 @@ if __name__ == "__main__":
             get_order(line[6])
         )
     else:
-        url = 'https://www.cyber.gov.au/acsc/view-all-content/alerts'
+        url = 'https://www.cyber.gov.au/acsc/view-all-content/alerts?title_op=word&title=&body_value_op=word&body_value=&sort_by=field_date_user_updated_value&sort_order=DESC'
     
     try:
         # Opening connection to website reading html into variable
