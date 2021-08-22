@@ -15,7 +15,7 @@ getNumber()
         if [ $number -lt $2 ] || [ $number -gt $3 ]; then
             printError "Input must be between $2 and $3"
         elif [ $number -eq 42 ]; then
-            echo "correct"
+            echo "right"
             exit 0
         elif [ $number -lt 42 ]; then
             echo "too low"
