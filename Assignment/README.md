@@ -9,6 +9,8 @@
     chmod +x ScraperMenu.sh
     chmod +x Search.sh
 
+    pip install bs4
+
 ## Running the Script
     In the Assignment Directory Run ./ScraperMenu.sh
     Default password = 'password'
