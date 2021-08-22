@@ -8,8 +8,6 @@ https://www.cyber.gov.au/acsc/view-all-content/alerts
 
 works with both default and custom search options
 """
-
-import bs4
 import sys
  
 from urllib.request import urlopen
