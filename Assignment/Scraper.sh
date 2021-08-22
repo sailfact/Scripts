@@ -14,7 +14,7 @@ printError ()
 
 if [ $# -eq 0 ]; then
     # Scrape www.cyber.gov.au/acsc/view-all-content/alerts
-    python Scraper.py
+    python3 Scraper.py
     # check if Scraper was Succesfull
     if [ $? -ne 0 ]; then
         printError "Scraper failed to scrape"
@@ -26,7 +26,7 @@ else
     i=0
     # test get csv search terms
     read -r line<$file
-    python Scraper.py $line 
+    python3 Scraper.py $line 
     if [ $? -ne 0 ]; then
         printError "Scraper failed for line : {$line}"
     fi

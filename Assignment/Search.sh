@@ -12,11 +12,11 @@ printError ()
 
 findPhrase()
 {
-    echo "Results for $1"
+    echo "Results for $phrase"
     echo
     echo
     # Find all lines with the searched word
-    grep --color "$1" alerts.csv
+    grep --color "$phrase" alerts.csv
     echo 
     echo
 }
@@ -37,10 +37,10 @@ alertCount()
 findWord()
 {
     # Find and print lines contanning specific words
-    echo "Results for $1"
+    echo "Results for $word"
     echo
     # Find all lines with the searched word
-    grep --color " $1 " alerts.csv
+    grep --color " $word " alerts.csv
     echo 
 }
 
@@ -107,7 +107,7 @@ while [[ $option -ne 6 ]]; do
         1) 
             # Search Key phrase
             read -p "---Enter Key Phrase: " phrase
-            findPhrase $phrase
+            findPhrase 
         ;;
         2)
             # Show Alert Count
@@ -116,7 +116,7 @@ while [[ $option -ne 6 ]]; do
         3)
             # Search specific words
             read -p "---Enter Keyword: " word
-            findWord $word
+            findWord
         ;;
         4)
             # Filter Specific Status
