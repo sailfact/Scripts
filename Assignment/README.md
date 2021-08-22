@@ -2,12 +2,17 @@
 > Author: Ross Curley\
 > Year: 2021
 ## Set-Up:
-    chmod +x /Secrets/passwordCheck.sh
-    chmod +x /Secrets/setPassword.sh
+    chmod +x Secrets/passwordCheck.sh
+    chmod +x Secrets/setPassword.sh
+    chmod +x Tests/TestScraper.sh
     chmod +x Scraper.sh
     chmod +x ScraperMenu.sh
     chmod +x ViewAlerts.sh
     chmod +x Search.sh
+
+## Running the Script
+    In the Assignment Directory Run ./ScraperMenu.sh
+    Default password = 'password'
 
 ## Custom Search Format
 ### Scope:
