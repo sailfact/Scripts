@@ -7,7 +7,6 @@
     chmod +x Tests/TestScraper.sh
     chmod +x Scraper.sh
     chmod +x ScraperMenu.sh
-    chmod +x ViewAlerts.sh
     chmod +x Search.sh
 
 ## Running the Script
